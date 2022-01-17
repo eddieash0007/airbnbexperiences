@@ -1,9 +1,17 @@
 import katie from "../images/katie.png"
 import star from "../images/Star.png"
 export default function Card(props){
-     console.log(props)
+     let badgeText
+     if (props.openSpots === 0)
+     {
+         badgeText = "SOLD OUT"
+     }else if(props.location === "Online")
+     {
+         badgeText = "ONLINE"
+     }
     return(
         <div className="card">
+           {badgeText &&<div className="card--badge">{badgeText}</div>}
             <img src={props.img} alt="katie" className=""/>
             {/* <img src={`../images/${props.image}`} alt="katie" className=""/> */}
             <div className="card--stats">

@@ -5,16 +5,20 @@ import styles from "./styles.css";
 import katie from "./images/katie.png";
 import data from "./data.js";
 
-function App() {
+export default function App() {
+  
   const cards = data.map((card) => {
+   
     return (
       <Card
+        key={card.id}
         price={card.price}
         img={card.coverImg}
         reviewCount={card.stats.reviewCount}
         title={card.title}
         location={card.location}
         rating={card.stats.rating}
+        openSpots={card.openSpots}
       />
     );
   });
@@ -29,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+
